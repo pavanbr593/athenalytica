@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athenalytica | Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--midnight:#081427;--ink:#f6f8fc;--muted:rgba(230,238,252,.78);--gold:#d4a93d;--sky:#c5d9f7;--line:rgba(197,217,247,.14);--shadow:0 24px 70px rgba(3,10,21,.45);--radius:30px;--max:1220px}
+    *{box-sizing:border-box}body{margin:0;font-family:"Plus Jakarta Sans",sans-serif;background:linear-gradient(180deg,#06101f 0%,#081427 45%,#091a31 100%);color:var(--ink)}a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100vw - 2rem));margin:0 auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(6,15,30,.76);backdrop-filter:blur(18px);border-bottom:1px solid rgba(197,217,247,.08)}.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0}.brand{display:flex;align-items:center;gap:.9rem}.mark{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(160deg,rgba(212,169,61,.22),rgba(139,184,246,.08)),linear-gradient(180deg,#0e2445,#09172f);border:1px solid rgba(197,217,247,.14)}.mark svg{width:28px;height:28px}.brand strong{display:block;font-size:1rem;letter-spacing:.06em;text-transform:uppercase}.brand span{display:block;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(230,238,252,.58)}.button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 1.25rem;border-radius:999px;border:1px solid rgba(212,169,61,.28);background:linear-gradient(135deg,rgba(212,169,61,.2),rgba(139,184,246,.08));font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+    h1,h2{font-family:"Fraunces",serif;line-height:1;letter-spacing:-.03em;margin:0;font-weight:600}h3{font-family:"Plus Jakarta Sans",sans-serif;line-height:1.08;letter-spacing:-.03em;margin:0;font-weight:800}
+    .hero{padding:3.6rem 0 3rem}.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);gap:2rem}.hero-copy,.hero-image,.panel,.story-panel,.cta{border-radius:32px;box-shadow:var(--shadow)}.hero-copy{padding:3rem;background:linear-gradient(180deg,rgba(10,27,54,.98),rgba(6,15,29,.96));border:1px solid rgba(197,217,247,.1)}.eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .8rem;border-radius:999px;border:1px solid rgba(212,169,61,.24);background:rgba(212,169,61,.08);color:#f9e7b2;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}.eyebrow::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--gold)}.hero-copy h1{font-size:clamp(3.8rem,7vw,5.9rem);margin-top:1.4rem;max-width:10ch}.hero-copy p{margin:1.7rem 0 0;color:var(--muted);font-size:1.04rem;line-height:1.92;max-width:42rem}.hero-image{min-height:680px;background:linear-gradient(180deg,rgba(5,14,27,.16),rgba(5,14,27,.66)),url("assets/images/runway-sunset.jpg") center/cover no-repeat;border:1px solid rgba(197,217,247,.12)}
+    .section{padding:3.6rem 0 0}.section + .section{margin-top:4rem}.section .container{position:relative}.section + .section .container::before{content:"";position:absolute;top:-1.35rem;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,217,247,.18),transparent)}.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,330px);gap:1.2rem;align-items:end;margin-bottom:2.2rem}.section-head h2{font-size:clamp(2.8rem,4vw,4.1rem);max-width:10ch}.section-head p,.panel p,.story-panel p,.metric span,.cta p{margin:0;color:var(--muted);line-height:1.9;font-size:1rem}
+    .image-ribbon,.story-grid,.cta{display:grid;gap:1.2rem}.image-ribbon{grid-template-columns:1.05fr .95fr}.ribbon-main,.ribbon-side,.story-image{border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}.ribbon-main{min-height:560px;background:linear-gradient(180deg,rgba(5,14,27,.24),rgba(5,14,27,.68)),url("assets/images/runway-night.jpg") center/cover no-repeat}.ribbon-side{padding:2.2rem;background:linear-gradient(180deg,rgba(7,18,35,.96),rgba(10,24,46,.92));border:1px solid rgba(197,217,247,.12);display:grid;gap:1rem;align-content:end}.ribbon-side h3{font-size:1.55rem}.market-list{display:grid;gap:.85rem;margin-top:.3rem}.market-item{padding:1.1rem;border-radius:20px;background:rgba(197,217,247,.05);border:1px solid rgba(197,217,247,.1)}.market-item strong{display:block;margin-bottom:.35rem;font-size:1rem}.market-item span{color:rgba(230,238,252,.72);font-size:.88rem;line-height:1.68}
+    .story-grid{grid-template-columns:.98fr 1.02fr}.story-image{min-height:600px;background:linear-gradient(180deg,rgba(6,15,29,.18),rgba(6,15,29,.6)),url("assets/images/cabin-passengers.jpg") center/cover no-repeat}.story-copy{display:grid;gap:1.2rem}.story-panel{padding:2rem;background:linear-gradient(180deg,rgba(8,20,39,.96),rgba(13,31,59,.9));border:1px solid rgba(197,217,247,.1)}.story-panel h3{font-size:1.45rem;margin-bottom:.95rem}
+    .proof-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}.metric{padding:1.15rem;border-radius:22px;background:rgba(197,217,247,.06);border:1px solid rgba(197,217,247,.12);min-height:164px}.metric strong{display:block;font-size:.98rem;margin-bottom:.35rem}
+    .cta{grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);overflow:hidden;border:1px solid rgba(197,217,247,.12);background:linear-gradient(120deg,rgba(9,25,48,.98),rgba(15,38,72,.94))}.cta-copy{padding:2.6rem}.cta-copy h2{font-size:clamp(2.5rem,4vw,3.8rem);margin-bottom:1rem;max-width:10ch}.cta-side{min-height:100%;background:linear-gradient(180deg,rgba(6,15,29,.16),rgba(6,15,29,.6)),url("assets/images/aircraft-descent.jpg") center/cover no-repeat}
+    footer{padding:2.8rem 0 3.6rem;color:rgba(230,238,252,.6);font-size:.84rem;letter-spacing:.12em;text-transform:uppercase}.foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(197,217,247,.12)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.is-visible{opacity:1;transform:translateY(0)}
+    @media (max-width:1080px){.hero-grid,.section-head,.image-ribbon,.story-grid,.proof-row,.cta{grid-template-columns:1fr}.hero-copy,.hero-image,.ribbon-main,.story-image{min-height:auto}.hero-image{min-height:540px}}
+    @media (max-width:720px){.container{width:min(var(--max),calc(100vw - 1.2rem))}.hero-copy{padding:2.1rem}.hero-copy h1{font-size:clamp(2.9rem,14vw,4.2rem)}.foot{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M10 35.5L29.5 27.6L45.4 11L54 14.1L41.4 30.4L54 33.5L49.1 39.7L37.7 38.3L28.3 48.8L23.3 47L29 36.2L16 42L10 35.5Z" fill="#E8C46B"/><circle cx="49.5" cy="40.5" r="8.5" stroke="#C5D9F7" stroke-width="2"/><circle cx="49.5" cy="40.5" r="2.8" fill="#C5D9F7"/></svg>
+        </span>
+        <span><strong>Athenalytica</strong><span>Aviation Intelligence</span></span>
+      </a>
+      <a class="button" href="index.html">Back to Home</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Platform Overview</div>
+          <h1>An operating layer for the airline system, not another dashboard shelf.</h1>
+          <p>The platform is organized around how airline teams actually act: protect yield, stabilize disruption, recover crew, and preserve passenger trust. Each surface is tuned for decisions, not report hunting.</p>
+        </div>
+        <div class="hero-image reveal"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Market patterns worth tracking, not copying.</h2></div>
+          <p>Industry operators and specialist vendors such as airBaltic, Azul, OAG, ProVerne, Guestlogix, and Hong Kong Airlines illustrate how analytics is moving closer to day-of-operations command, pricing precision, and crew resilience.</p>
+        </div>
+        <div class="image-ribbon">
+          <div class="ribbon-main reveal"></div>
+          <div class="ribbon-side reveal">
+            <h3>What the platform is built to hold</h3>
+            <div class="market-list">
+              <div class="market-item"><strong>Network and pricing signals</strong><span>Blend schedule competitiveness, demand shape, and route-level performance into one commercial view.</span></div>
+              <div class="market-item"><strong>Operational continuity</strong><span>Track delay propagation, aircraft availability, and station bottlenecks in the same command surface.</span></div>
+              <div class="market-item"><strong>Passenger recovery intelligence</strong><span>Route disruption decisions through guest priority, rebooking feasibility, and service risk exposure.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><h2>Built for the moments passengers remember and boards measure.</h2></div>
+          <p>Airlines do not lose confidence in isolated metrics. Confidence erodes when systems stop agreeing. Athenalytica is built to align teams around what to protect first.</p>
+        </div>
+        <div class="story-grid">
+          <div class="story-image reveal"></div>
+          <div class="story-copy">
+            <article class="story-panel reveal">
+              <h3>Commercial and operations no longer compete for the narrative.</h3>
+              <p>Revenue leaders can see how route decisions affect service risk. Operations teams can weigh delay recovery against guest and commercial exposure. The result is a more deliberate system response across the network.</p>
+            </article>
+            <article class="story-panel reveal">
+              <h3>Passenger experience becomes measurable in operational terms.</h3>
+              <p>Connection stress, loyalty value, and service recovery cost sit inside the same framework as disruption severity, helping teams protect premium itineraries without hiding operational reality.</p>
+            </article>
+            <div class="proof-row">
+              <div class="metric reveal"><strong>Route focus</strong><span>Target city-pair and schedule decisions where yield and reliability move together.</span></div>
+              <div class="metric reveal"><strong>Station focus</strong><span>Benchmark turnaround consistency and bottleneck pressure by airport and wave.</span></div>
+              <div class="metric reveal"><strong>Crew focus</strong><span>Stabilize legality and reserve posture before operations enter recovery mode.</span></div>
+              <div class="metric reveal"><strong>Guest focus</strong><span>Intervene where missed-connection and service-recovery risk converge.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta-copy">
+            <h2>Use the landing page for positioning. Use this page for depth.</h2>
+            <p>The homepage now carries less density, while this platform page holds the deeper architecture and operating story. That separation keeps the site more premium and easier to scan.</p>
+          </div>
+          <div class="cta-side"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container foot">
+      <span>Athenalytica</span>
+      <span>Platform overview</span>
+      <span>sales@athenalytica.com</span>
+    </div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+  </script>
+</body>
+</html>
